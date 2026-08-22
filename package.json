@@ -1,0 +1,20 @@
+{
+  "name": "chef-muhammad-umair-portfolio",
+  "version": "1.0.0",
+  "description": "Full Stack Portfolio Website for Professional Chef Muhammad Umair",
+  "scripts": {
+    "server": "cd server && npm run dev",
+    "client": "cd client && npm run dev",
+    "seed": "cd server && npm run seed",
+    "install:server": "cd server && npm install",
+    "install:client": "cd client && npm install",
+    "install:all": "npm run install:server && npm run install:client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "keywords": ["chef", "portfolio", "mern", "react", "express"],
+  "author": "Muhammad Umair",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
