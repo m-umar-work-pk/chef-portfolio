@@ -13,10 +13,17 @@
     "build": "cd client && npm install && npm run build",
     "vercel-build": "cd client && npm install && npm run build"
   },
-  "keywords": ["chef", "portfolio", "mern", "react", "express"],
+  "keywords": [
+    "chef",
+    "portfolio",
+    "mern",
+    "react",
+    "express"
+  ],
   "author": "Muhammad Umair",
   "license": "ISC",
   "devDependencies": {
-    "concurrently": "^8.2.2"
+    "concurrently": "^8.2.2",
+    "vercel": "^59.4.0"
   }
 }
