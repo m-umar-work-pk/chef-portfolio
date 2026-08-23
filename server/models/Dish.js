@@ -12,6 +12,7 @@ const dishSchema = new mongoose.Schema({
   imagePublicId: { type: String, default: '' },
   featured: { type: Boolean, default: false },
   ingredients: [{ type: String }],
+  recipe: { type: String, default: '' },
   available: { type: Boolean, default: true },
 }, { timestamps: true });
 

@@ -220,6 +220,12 @@ export default function Menu() {
                     </div>
                   </div>
                 )}
+                {selectedDish.recipe && (
+                  <div className="mt-4">
+                    <p className="text-gold text-xs font-medium tracking-wider uppercase mb-2">Recipe</p>
+                    <p className="text-gray-400 text-sm leading-relaxed whitespace-pre-line">{selectedDish.recipe}</p>
+                  </div>
+                )}
               </div>
             </motion.div>
           </motion.div>

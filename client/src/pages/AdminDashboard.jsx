@@ -26,6 +26,7 @@ const AdminDashboard = () => {
   const [dishCategory, setDishCategory] = useState('Main Course');
   const [dishFeatured, setDishFeatured] = useState(false);
   const [dishIngredients, setDishIngredients] = useState('');
+  const [dishRecipe, setDishRecipe] = useState('');
   const [dishAvailable, setDishAvailable] = useState(true);
   const [dishImageFile, setDishImageFile] = useState(null);
   const [dishImagePreview, setDishImagePreview] = useState('');
@@ -74,6 +75,7 @@ const AdminDashboard = () => {
     setDishCategory('Main Course');
     setDishFeatured(false);
     setDishIngredients('');
+    setDishRecipe('');
     setDishAvailable(true);
     setDishImageFile(null);
     setDishImagePreview('');
@@ -107,6 +109,7 @@ const AdminDashboard = () => {
     setDishName(dish.name); setDishDescription(dish.description);
     setDishCategory(dish.category); setDishFeatured(dish.featured);
     setDishIngredients(dish.ingredients ? dish.ingredients.join(', ') : '');
+    setDishRecipe(dish.recipe || '');
     setDishAvailable(dish.available); setDishImagePreview(dish.image || '');
     setShowForm(true);
   };
@@ -146,6 +149,7 @@ const AdminDashboard = () => {
       formData.append('featured', dishFeatured);
       formData.append('available', dishAvailable);
       formData.append('ingredients', JSON.stringify(dishIngredients.split(',').map(i => i.trim()).filter(Boolean)));
+      formData.append('recipe', dishRecipe);
       if (dishImageFile) formData.append('image', dishImageFile);
       const url = editing ? `/api/dishes/${editing._id}` : '/api/dishes';
       const res = await fetch(url, {
@@ -483,6 +487,12 @@ const AdminDashboard = () => {
                     <input type="text" value={dishIngredients} onChange={e => setDishIngredients(e.target.value)}
                       className="w-full bg-[#1a1a24] border border-gray-700 rounded-lg px-4 py-2.5 text-white focus:border-[#D4AF37] focus:outline-none transition-colors"
                       placeholder="e.g. Chicken, Garlic, Olive Oil" />
+                  </div>
+                  <div>
+                    <label className="block text-sm text-gray-400 mb-1">Recipe</label>
+                    <textarea value={dishRecipe} onChange={e => setDishRecipe(e.target.value)} rows={5}
+                      className="w-full bg-[#1a1a24] border border-gray-700 rounded-lg px-4 py-2.5 text-white focus:border-[#D4AF37] focus:outline-none transition-colors resize-none"
+                      placeholder="Write the recipe steps here..." />
                   </div>
                   <div className="flex items-center gap-6">
                     <label className="flex items-center gap-2 cursor-pointer">
