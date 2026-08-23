@@ -226,6 +226,40 @@ export default function Menu() {
                     <p className="text-gray-400 text-sm leading-relaxed whitespace-pre-line">{selectedDish.recipe}</p>
                   </div>
                 )}
+                {(selectedDish.cookTime || selectedDish.servings || selectedDish.difficulty || selectedDish.calories) && (
+                  <div className="flex flex-wrap gap-3 mt-4">
+                    {selectedDish.cookTime && (
+                      <span className="text-xs px-3 py-1.5 rounded-full bg-gold/10 text-gold/80 border border-gold/15">
+                        ⏱ {selectedDish.cookTime}
+                      </span>
+                    )}
+                    {selectedDish.servings && (
+                      <span className="text-xs px-3 py-1.5 rounded-full bg-gold/10 text-gold/80 border border-gold/15">
+                        🍽 {selectedDish.servings}
+                      </span>
+                    )}
+                    {selectedDish.difficulty && (
+                      <span className={`text-xs px-3 py-1.5 rounded-full border ${
+                        selectedDish.difficulty === 'Easy' ? 'bg-green-500/10 text-green-400 border-green-500/20' :
+                        selectedDish.difficulty === 'Hard' ? 'bg-red-500/10 text-red-400 border-red-500/20' :
+                        'bg-yellow-500/10 text-yellow-400 border-yellow-500/20'
+                      }`}>
+                        {selectedDish.difficulty}
+                      </span>
+                    )}
+                    {selectedDish.calories > 0 && (
+                      <span className="text-xs px-3 py-1.5 rounded-full bg-gold/10 text-gold/80 border border-gold/15">
+                        🔥 {selectedDish.calories} cal
+                      </span>
+                    )}
+                  </div>
+                )}
+                {selectedDish.chefNotes && (
+                  <div className="mt-4 p-3 rounded-lg bg-gold/5 border border-gold/10">
+                    <p className="text-gold text-xs font-medium tracking-wider uppercase mb-1">Chef&apos;s Notes</p>
+                    <p className="text-gray-400 text-sm leading-relaxed italic">{selectedDish.chefNotes}</p>
+                  </div>
+                )}
               </div>
             </motion.div>
           </motion.div>

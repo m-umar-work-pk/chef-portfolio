@@ -27,6 +27,11 @@ const AdminDashboard = () => {
   const [dishFeatured, setDishFeatured] = useState(false);
   const [dishIngredients, setDishIngredients] = useState('');
   const [dishRecipe, setDishRecipe] = useState('');
+  const [dishCookTime, setDishCookTime] = useState('');
+  const [dishServings, setDishServings] = useState('');
+  const [dishDifficulty, setDishDifficulty] = useState('Medium');
+  const [dishCalories, setDishCalories] = useState('');
+  const [dishChefNotes, setDishChefNotes] = useState('');
   const [dishAvailable, setDishAvailable] = useState(true);
   const [dishImageFile, setDishImageFile] = useState(null);
   const [dishImagePreview, setDishImagePreview] = useState('');
@@ -76,6 +81,11 @@ const AdminDashboard = () => {
     setDishFeatured(false);
     setDishIngredients('');
     setDishRecipe('');
+    setDishCookTime('');
+    setDishServings('');
+    setDishDifficulty('Medium');
+    setDishCalories('');
+    setDishChefNotes('');
     setDishAvailable(true);
     setDishImageFile(null);
     setDishImagePreview('');
@@ -110,6 +120,11 @@ const AdminDashboard = () => {
     setDishCategory(dish.category); setDishFeatured(dish.featured);
     setDishIngredients(dish.ingredients ? dish.ingredients.join(', ') : '');
     setDishRecipe(dish.recipe || '');
+    setDishCookTime(dish.cookTime || '');
+    setDishServings(dish.servings || '');
+    setDishDifficulty(dish.difficulty || 'Medium');
+    setDishCalories(dish.calories || '');
+    setDishChefNotes(dish.chefNotes || '');
     setDishAvailable(dish.available); setDishImagePreview(dish.image || '');
     setShowForm(true);
   };
@@ -150,6 +165,11 @@ const AdminDashboard = () => {
       formData.append('available', dishAvailable);
       formData.append('ingredients', JSON.stringify(dishIngredients.split(',').map(i => i.trim()).filter(Boolean)));
       formData.append('recipe', dishRecipe);
+      formData.append('cookTime', dishCookTime);
+      formData.append('servings', dishServings);
+      formData.append('difficulty', dishDifficulty);
+      formData.append('calories', dishCalories);
+      formData.append('chefNotes', dishChefNotes);
       if (dishImageFile) formData.append('image', dishImageFile);
       const url = editing ? `/api/dishes/${editing._id}` : '/api/dishes';
       const res = await fetch(url, {
@@ -493,6 +513,43 @@ const AdminDashboard = () => {
                     <textarea value={dishRecipe} onChange={e => setDishRecipe(e.target.value)} rows={5}
                       className="w-full bg-[#1a1a24] border border-gray-700 rounded-lg px-4 py-2.5 text-white focus:border-[#D4AF37] focus:outline-none transition-colors resize-none"
                       placeholder="Write the recipe steps here..." />
+                  </div>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-sm text-gray-400 mb-1">Cooking Time</label>
+                      <input type="text" value={dishCookTime} onChange={e => setDishCookTime(e.target.value)}
+                        className="w-full bg-[#1a1a24] border border-gray-700 rounded-lg px-4 py-2.5 text-white focus:border-[#D4AF37] focus:outline-none transition-colors"
+                        placeholder="e.g. 30 mins" />
+                    </div>
+                    <div>
+                      <label className="block text-sm text-gray-400 mb-1">Servings</label>
+                      <input type="text" value={dishServings} onChange={e => setDishServings(e.target.value)}
+                        className="w-full bg-[#1a1a24] border border-gray-700 rounded-lg px-4 py-2.5 text-white focus:border-[#D4AF37] focus:outline-none transition-colors"
+                        placeholder="e.g. 4 servings" />
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-sm text-gray-400 mb-1">Difficulty</label>
+                      <select value={dishDifficulty} onChange={e => setDishDifficulty(e.target.value)}
+                        className="w-full bg-[#1a1a24] border border-gray-700 rounded-lg px-4 py-2.5 text-white focus:border-[#D4AF37] focus:outline-none transition-colors">
+                        <option value="Easy">Easy</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Hard">Hard</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label className="block text-sm text-gray-400 mb-1">Calories</label>
+                      <input type="number" value={dishCalories} onChange={e => setDishCalories(e.target.value)}
+                        className="w-full bg-[#1a1a24] border border-gray-700 rounded-lg px-4 py-2.5 text-white focus:border-[#D4AF37] focus:outline-none transition-colors"
+                        placeholder="e.g. 450" />
+                    </div>
+                  </div>
+                  <div>
+                    <label className="block text-sm text-gray-400 mb-1">Chef&apos;s Notes</label>
+                    <textarea value={dishChefNotes} onChange={e => setDishChefNotes(e.target.value)} rows={3}
+                      className="w-full bg-[#1a1a24] border border-gray-700 rounded-lg px-4 py-2.5 text-white focus:border-[#D4AF37] focus:outline-none transition-colors resize-none"
+                      placeholder="Chef's tips or special notes about this dish..." />
                   </div>
                   <div className="flex items-center gap-6">
                     <label className="flex items-center gap-2 cursor-pointer">

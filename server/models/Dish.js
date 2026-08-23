@@ -13,6 +13,11 @@ const dishSchema = new mongoose.Schema({
   featured: { type: Boolean, default: false },
   ingredients: [{ type: String }],
   recipe: { type: String, default: '' },
+  cookTime: { type: String, default: '' },
+  servings: { type: String, default: '' },
+  difficulty: { type: String, enum: ['Easy', 'Medium', 'Hard'], default: 'Medium' },
+  calories: { type: Number, default: 0 },
+  chefNotes: { type: String, default: '' },
   available: { type: Boolean, default: true },
 }, { timestamps: true });
 
