@@ -6,7 +6,7 @@ import { toast } from 'react-toastify'
 const contactInfo = [
   { icon: FaMapMarkerAlt, label: 'Address', value: '203 RB , Manawala , Faisalabad , Pakistan' },
   { icon: FaPhone, label: 'Phone', value: '+92 3291923525' },
-  { icon: FaEnvelope, label: 'Email', value: 'pro.chief.umair@gmail.com' },
+  { icon: FaEnvelope, label: 'Email', value: 'pro.chef.umair@gmail.com' },
   { icon: FaClock, label: 'Working Hours', value: 'Mon - Sat: 10:00 AM - 11:00 PM' },
 ]
 
@@ -74,7 +74,7 @@ export default function Contact() {
           className="text-center mb-12">
           <span className="text-gold text-xs tracking-[4px] uppercase">Get in Touch</span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mt-3">
-            Contact <span className="text-gradient">Chief Umair</span>
+            Contact <span className="text-gradient">Chef Umair</span>
           </h2>
           <div className="line-accent mx-auto mt-4" />
         </motion.div>
@@ -125,7 +125,7 @@ export default function Contact() {
             ))}
 
             <div className="card-dark rounded-xl p-5">
-              <p className="text-gold text-xs font-medium tracking-wider uppercase mb-3">Follow Chief Umair</p>
+              <p className="text-gold text-xs font-medium tracking-wider uppercase mb-3">Follow Chef Umair</p>
               <div className="flex gap-3">
                 {socials.map((s, i) => (
                   <a key={i} href={s.href}

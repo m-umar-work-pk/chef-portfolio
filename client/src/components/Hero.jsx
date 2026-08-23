@@ -42,7 +42,7 @@ export default function Hero() {
           <div className="flex-1 text-center lg:text-left">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={mounted ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.2 }}>
               <span className="inline-block py-2 px-5 rounded-full border border-gold/20 text-gold text-xs font-medium tracking-[3px] uppercase mb-6">
-                Executive Chief
+                Executive Chef
               </span>
             </motion.div>
 

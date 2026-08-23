@@ -37,7 +37,8 @@ export default function Footer() {
                   onError={(e) => { e.target.src = '/images/chief-umair-placeholder.svg' }} />
               </div>
               <div>
-                <h3 className="font-heading text-lg font-bold text-gradient">Chief Umair</h3>
+                <h3 className="font-heading text-lg font-bold text-gradient">Ch
+                  ef Umair</h3>
                 <p className="text-[8px] tracking-[2px] uppercase text-gold/40">Culinary Excellence</p>
               </div>
             </div>
@@ -77,7 +78,7 @@ export default function Footer() {
               <li>203 RB , Manawala</li>
               <li>Faisalabad , Pakistan</li>
               <li className="text-gold">+92 329 1923525</li>
-              <li>pro.chief.umair@gmail.com</li>
+              <li>pro.chef.umair@gmail.com</li>
             </ul>
           </div>
 

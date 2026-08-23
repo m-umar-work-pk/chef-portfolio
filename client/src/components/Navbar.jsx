@@ -46,7 +46,7 @@ export default function Navbar() {
                 onError={(e) => { e.target.src = '/images/chief-umair.svg' }} />
             </div>
             <div>
-              <h1 className="font-heading text-lg font-bold text-gradient leading-tight">Chief Umair</h1>
+              <h1 className="font-heading text-lg font-bold text-gradient leading-tight">Chef Umair</h1>
               <p className="text-[8px] tracking-[2px] uppercase text-gold/50 -mt-0.5">Culinary Excellence</p>
             </div>
           </a>
