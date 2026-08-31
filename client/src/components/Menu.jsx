@@ -180,7 +180,7 @@ export default function Menu() {
             onClick={() => setSelectedDish(null)}>
             <motion.div initial={{ opacity: 0, scale: 0.9, y: 20 }} animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }} transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-              className="card-dark rounded-2xl w-full max-w-lg overflow-hidden"
+              className="card-dark rounded-2xl w-full max-w-lg max-h-[90vh] overflow-y-auto"
               onClick={(e) => e.stopPropagation()}>
               <div className="relative aspect-video overflow-hidden">
                 {selectedDish.image ? (
