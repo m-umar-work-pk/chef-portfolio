@@ -180,9 +180,9 @@ export default function Menu() {
             onClick={() => setSelectedDish(null)}>
             <motion.div initial={{ opacity: 0, scale: 0.9, y: 20 }} animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }} transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-              className="card-dark rounded-2xl w-full max-w-lg max-h-[90vh] overflow-y-auto"
+              className="card-dark rounded-2xl w-full max-w-lg max-h-[90vh] flex flex-col"
               onClick={(e) => e.stopPropagation()}>
-              <div className="relative aspect-video overflow-hidden">
+              <div className="relative h-56 flex-shrink-0 overflow-hidden">
                 {selectedDish.image ? (
                   <img src={selectedDish.image} alt={selectedDish.name} className="w-full h-full object-cover" />
                 ) : (
@@ -200,7 +200,7 @@ export default function Menu() {
                   </div>
                 )}
               </div>
-              <div className="p-6">
+              <div className="p-6 overflow-y-auto flex-1">
                 <div className="flex items-start justify-between mb-3">
                   <h3 className="font-heading text-2xl font-bold text-white">{selectedDish.name}</h3>
                   <span className="text-xs bg-gold/10 text-gold px-3 py-1 rounded-full border border-gold/20 flex-shrink-0 ml-3">

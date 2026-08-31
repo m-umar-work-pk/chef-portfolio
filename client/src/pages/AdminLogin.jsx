@@ -47,7 +47,7 @@ export default function AdminLogin() {
         <form onSubmit={handleSubmit} className="card-dark rounded-2xl p-8 space-y-5">
           <div>
             <label className="text-gray-400 text-xs tracking-wider uppercase mb-2 block">Email</label>
-            <input type="email" placeholder="pro.chief.umair@gmail.com" value={form.email}
+            <input type="email" placeholder="mumairchef@gmail.com" value={form.email}
               onChange={(e) => setForm({ ...form, email: e.target.value })}
               className="w-full bg-dark-lighter border border-gold/10 rounded-xl px-4 py-3.5 text-white text-sm placeholder-gray-600 focus:outline-none focus:border-gold/40 transition-all" />
           </div>
