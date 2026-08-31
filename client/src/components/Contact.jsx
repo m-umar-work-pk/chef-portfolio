@@ -50,7 +50,7 @@ export default function Contact() {
         toast.success('Message sent successfully!')
         setForm({ name: '', email: '', phone: '', subject: '', message: '' })
       } else {
-        toast.error('Failed to send message')
+        toast.error(data.message || 'Failed to send message')
       }
     } catch {
       toast.error('Server error. Please try again.')
