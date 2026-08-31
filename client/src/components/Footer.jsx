@@ -78,7 +78,7 @@ export default function Footer() {
               <li>203 RB , Manawala</li>
               <li>Faisalabad , Pakistan</li>
               <li className="text-gold">+92 329 1923525</li>
-              <li>pro.chef.umair@gmail.com</li>
+              <li>mumairchef@gmail.com</li>
             </ul>
           </div>
 

@@ -6,7 +6,7 @@ import { toast } from 'react-toastify'
 const contactInfo = [
   { icon: FaMapMarkerAlt, label: 'Address', value: '203 RB , Manawala , Faisalabad , Pakistan' },
   { icon: FaPhone, label: 'Phone', value: '+92 3291923525' },
-  { icon: FaEnvelope, label: 'Email', value: 'pro.chef.umair@gmail.com' },
+  { icon: FaEnvelope, label: 'Email', value: 'mumairchef@gmail.com' },
   { icon: FaClock, label: 'Working Hours', value: 'Mon - Sat: 10:00 AM - 11:00 PM' },
 ]
 
